@@ -176,7 +176,7 @@ class Chatbot:
         # Get response
         response = self.session.post(
             os.environ.get("API_URL") or "https://api.openai.com/v1/chat/completions",
-            headers={"Authorization": f"Bearer {kwargs.get('api_key', self.api_key)}"},
+            headers={"api-key": f"{kwargs.get('api_key', self.api_key)}"},
             json={
                 "model": self.engine,
                 "messages": self.conversation[convo_id],
@@ -246,7 +246,7 @@ class Chatbot:
         async with self.aclient.stream(
             "post",
             os.environ.get("API_URL") or "https://api.openai.com/v1/chat/completions",
-            headers={"Authorization": f"Bearer {kwargs.get('api_key', self.api_key)}"},
+            headers={"api-key": f"{kwargs.get('api_key', self.api_key)}"},
             json={
                 "model": self.engine,
                 "messages": self.conversation[convo_id],

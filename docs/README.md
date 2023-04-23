@@ -243,3 +243,10 @@ This project exists thanks to all the people who contribute.
 ## Additional credits
 
 - Coding while listening to [this amazing song](https://www.youtube.com/watch?v=VaMR_xDhsGg) by [virtualharby](https://www.youtube.com/@virtualharby)
+
+## For Azure OpenAI Service
+
+```bash
+export API_URL="https://{YOUR_RESOURCE_NAME}.openai.azure.com/openai/deployments/gpt-35/chat/completions?api-version=2023-03-15-preview" # from sample code
+python3 -m revChatGPT --V3 --api_key {AZURE_OPENAI_API_KEY}
+```
